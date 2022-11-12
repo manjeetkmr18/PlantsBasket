@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Plants Basket</string>
+    <string name="desc">Enjoy your life with <b>plants</b></string>
+    <string name="shop">Shop Now</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="credit_card_number">Credit Card Number</string>
+    <string name="checkout">CheckOut</string>
+    <string name="exp_date">Expiry Date</string>
+    <string name="security_code">Security Code</string>
+    <string name="submit">Submit</string>
+    <string name="plant_explore">Plant Explore</string>
+    <string name="organic">Organic</string>
+    <string name="brooklyn">Brooklyn</string>
+    <string name="brooklyn1">Brooklyn</string>
+    <string name="amount">$35.99</string>
+    <string name="todo">TODO</string>
+</resources>
