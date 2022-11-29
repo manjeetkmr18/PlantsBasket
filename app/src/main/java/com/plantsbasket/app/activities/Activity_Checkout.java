@@ -1,10 +1,12 @@
-package   com.plantsbasket.app;
+package com.plantsbasket.app.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.plantsbasket.app.R;
 
 public class Activity_Checkout extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package   com.plantsbasket.app;
+package com.plantsbasket.app.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -10,17 +10,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.plantsbasket.app.PlantsModel;
+import com.plantsbasket.app.R;
+import com.plantsbasket.app.activities.Activity_shop;
+import com.plantsbasket.app.activities.interfaces.ItemClickListener;
+
+
 import java.util.ArrayList;
 
 public class PlantsRecyclerAdapter extends RecyclerView.Adapter<PlantsRecyclerAdapter.ViewHolder>{
+    ItemClickListener itemClickListener;
     private Activity context;
     private ArrayList<PlantsModel> plantsList;
     private static int SELECTED_POSITION = 0;
-
-    public PlantsRecyclerAdapter(Activity context, ArrayList<PlantsModel> plantsList) {
+    public PlantsRecyclerAdapter(Activity context, ArrayList<PlantsModel> plantsList,ItemClickListener itemClickListener) {
         this.context = context;
         this.plantsList = plantsList;
+        this.itemClickListener = itemClickListener;
+
     }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -30,11 +39,25 @@ public class PlantsRecyclerAdapter extends RecyclerView.Adapter<PlantsRecyclerAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         holder.tvItemPlantCategory.setText(plantsList.get(position).getCategory());
         holder.tvItemPlantName.setText(plantsList.get(position).getName());
         holder.tvItemPlantLocation.setText(plantsList.get(position).getLocation());
         holder.tvItemPlantPrice.setText(plantsList.get(position).getPrice());
         holder.ivPlantsImg.setImageDrawable(plantsList.get(position).getPlantImage());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // get adapter position
+                int position=holder.getAdapterPosition();
+                // call listener
+                itemClickListener.onClick(position, String.valueOf(plantsList.get(position)));
+                // update position
+                SELECTED_POSITION=position;
+                // notify
+                notifyDataSetChanged();
+            }
+        });
     }
 
     @Override
@@ -55,5 +78,7 @@ public class PlantsRecyclerAdapter extends RecyclerView.Adapter<PlantsRecyclerAd
             tvItemPlantPrice = itemView.findViewById(R.id.tvItemPlantPrice);
             ivPlantsImg = itemView.findViewById(R.id.ivPlantsImg);
         }
+
+
     }
 }

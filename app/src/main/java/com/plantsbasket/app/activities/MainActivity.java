@@ -1,4 +1,4 @@
-package   com.plantsbasket.app;
+package com.plantsbasket.app.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.plantsbasket.app.R;
+import com.plantsbasket.app.activities.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         shop_now.setOnClickListener(view -> shopNow());
     }
     private void shopNow() {
-        Intent move = new Intent(this,Activity_shop.class);
+        Intent move = new Intent(this, LoginActivity.class);
         startActivity(move);
     }
 }

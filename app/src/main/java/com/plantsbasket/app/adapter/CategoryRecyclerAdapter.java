@@ -1,8 +1,9 @@
-package   com.plantsbasket.app;
+package com.plantsbasket.app.adapter;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.plantsbasket.app.R;
+import com.plantsbasket.app.activities.Activity_Checkout;
+import com.plantsbasket.app.fragments.Plant_Detail_Fragment;
 
 import java.util.ArrayList;
 
@@ -49,7 +54,8 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryRecycl
             public void onClick(View v) {
                 SELECTED_POSITION = position;
                 notifyDataSetChanged();
-                context.startActivity(new Intent(context, Activity_Checkout.class));
+
+               // context.startActivity(new Intent(context, Activity_Checkout.class));
             }
         });
     }
