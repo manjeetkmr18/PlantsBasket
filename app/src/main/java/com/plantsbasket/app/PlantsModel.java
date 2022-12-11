@@ -3,14 +3,36 @@ package   com.plantsbasket.app;
 import android.graphics.drawable.Drawable;
 
 public class PlantsModel {
-    private String location, name, category, price;
+    private String plantId, location, name, category, price, description, plantImageSrc, documentId;
+    private int count = 1;
     private Drawable plantImage;
-    public PlantsModel(Drawable plantImage, String location, String name, String category, String price) {
+
+    public PlantsModel() {
+    }
+
+    public PlantsModel(Drawable plantImage, String location, String name, String category, String price,String count) {
         this.plantImage = plantImage;
         this.location = location;
         this.name = name;
         this.category = category;
         this.price = price;
+    }
+    public PlantsModel(String plantId, String plantImageSrc, String location, String name, String category, String price, String description) {
+        this.plantId = plantId;
+        this.plantImageSrc = plantImageSrc;
+        this.location = location;
+        this.name = name;
+        this.category = category;
+        this.price = price;
+        this.description = description;
+    }
+
+    public String getPlantId() {
+        return plantId;
+    }
+
+    public void setPlantId(String plantId) {
+        this.plantId = plantId;
     }
 
     public Drawable getPlantImage() {
@@ -49,7 +71,41 @@ public class PlantsModel {
         return price;
     }
 
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     public void setPrice(String price) {
         this.price = price;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getPlantImageSrc() {
+        return plantImageSrc;
+    }
+
+    public void setPlantImageSrc(String plantImageSrc) {
+        this.plantImageSrc = plantImageSrc;
+    }
+
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
+
+
 }

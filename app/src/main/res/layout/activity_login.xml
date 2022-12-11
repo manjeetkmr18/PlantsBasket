@@ -168,7 +168,7 @@
             android:textColor="@color/grey"
             android:textSize="16sp"/>
         <ImageView
-            android:id="@+id/iv_google"
+            android:id="@+id/sign_in_google"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:padding="4dp"

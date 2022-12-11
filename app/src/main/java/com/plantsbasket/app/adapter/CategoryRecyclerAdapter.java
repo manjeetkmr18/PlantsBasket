@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.plantsbasket.app.R;
 import com.plantsbasket.app.activities.Activity_Checkout;
+import com.plantsbasket.app.activities.interfaces.ItemClickListener;
 import com.plantsbasket.app.fragments.Plant_Detail_Fragment;
 
 import java.util.ArrayList;
@@ -24,11 +25,13 @@ import java.util.ArrayList;
 public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryRecyclerAdapter.ViewHolder> {
     private Activity context;
     private ArrayList<String> categoryList;
+    private  ItemClickListener itemClickListener;
     private static int SELECTED_POSITION = 0;
 
-    public CategoryRecyclerAdapter(Activity context, ArrayList<String> categoryList) {
+    public CategoryRecyclerAdapter(Activity context, ArrayList<String> categoryList, ItemClickListener itemClickListener) {
         this.context = context;
         this.categoryList = categoryList;
+        this.itemClickListener = itemClickListener;
     }
     @NonNull
     @Override
@@ -54,7 +57,7 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryRecycl
             public void onClick(View v) {
                 SELECTED_POSITION = position;
                 notifyDataSetChanged();
-
+                itemClickListener.onClick(position, "");
                // context.startActivity(new Intent(context, Activity_Checkout.class));
             }
         });

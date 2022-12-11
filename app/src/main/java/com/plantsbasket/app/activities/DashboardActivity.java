@@ -1,5 +1,9 @@
 package com.plantsbasket.app.activities;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,19 +11,22 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import android.os.Bundle;
-import android.view.MenuItem;
+
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.plantsbasket.app.R;
+import com.plantsbasket.app.fragments.CartFragment;
 import com.plantsbasket.app.fragments.ProfileFragment;
 import com.plantsbasket.app.fragments.ShopFragment;
 
-public class Dashboard_Activity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
+public class DashboardActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_dashboard);
         drawerLayout = findViewById(R.id.my_drawer_layout);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -65,11 +72,17 @@ public class Dashboard_Activity extends AppCompatActivity  implements Navigation
             case R.id.nav_shop:
                 fragment = new ShopFragment();
                 break;
+            case R.id.action_cart:
+                fragment = new CartFragment();
+                break;
+
             case R.id.nav_profile:
                 fragment = new ProfileFragment();
                 break;
             case R.id.nav_logout:
-
+                mAuth.signOut();
+                finishAffinity();
+                startActivity(new Intent(DashboardActivity.this, LoginActivity.class));
                 break;
         }
 
@@ -82,5 +95,6 @@ public class Dashboard_Activity extends AppCompatActivity  implements Navigation
 
         drawerLayout.closeDrawer(GravityCompat.START);
     }
+
 
 }

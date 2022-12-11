@@ -10,11 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.plantsbasket.app.PlantsModel;
 import com.plantsbasket.app.R;
-import com.plantsbasket.app.activities.Activity_shop;
 import com.plantsbasket.app.activities.interfaces.ItemClickListener;
-
 
 import java.util.ArrayList;
 
@@ -44,7 +43,13 @@ public class PlantsRecyclerAdapter extends RecyclerView.Adapter<PlantsRecyclerAd
         holder.tvItemPlantName.setText(plantsList.get(position).getName());
         holder.tvItemPlantLocation.setText(plantsList.get(position).getLocation());
         holder.tvItemPlantPrice.setText(plantsList.get(position).getPrice());
-        holder.ivPlantsImg.setImageDrawable(plantsList.get(position).getPlantImage());
+        String imgSrc = plantsList.get(position).getPlantImageSrc();
+        Glide.with(context)
+                .load(imgSrc)
+                .centerCrop()
+                .placeholder(R.drawable.image_place_holder)
+                .into(holder.ivPlantsImg);
+        //holder.ivPlantsImg.setImageDrawable(plantsList.get(position).getPlantImage());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +60,7 @@ public class PlantsRecyclerAdapter extends RecyclerView.Adapter<PlantsRecyclerAd
                 // update position
                 SELECTED_POSITION=position;
                 // notify
-                notifyDataSetChanged();
+               // notifyDataSetChanged();
             }
         });
     }

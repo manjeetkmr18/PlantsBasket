@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.plantsbasket.app.activities.interfaces.ItemClickListener;
 import com.plantsbasket.app.adapter.CategoryRecyclerAdapter;
 import com.plantsbasket.app.PlantsModel;
 import com.plantsbasket.app.adapter.PlantsRecyclerAdapter;
@@ -44,13 +45,18 @@ public class Activity_shop extends AppCompatActivity {
         categoryList.add("Indoors");
         categoryList.add("Small Plants");
         rvMainCategory.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        CategoryRecyclerAdapter categoryRecyclerAdapter = new CategoryRecyclerAdapter(this, categoryList);
+        CategoryRecyclerAdapter categoryRecyclerAdapter = new CategoryRecyclerAdapter(this, categoryList, new ItemClickListener() {
+            @Override
+            public void onClick(int position, String value) {
+
+            }
+        });
         rvMainCategory.setAdapter(categoryRecyclerAdapter);
     }
 
     private void setPlantsAdapter() {
 
-        ArrayList<PlantsModel> plantsModelArrayList = new ArrayList<>();
+       /* ArrayList<PlantsModel> plantsModelArrayList = new ArrayList<>();
         plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_1), "Brooklyn", "Succulent", "Organic", "$35.99"));
         plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_2), "London", "Succulent", "Organic", "$35.99"));
         plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_3), "Japan", "Succulent", "Organic", "$35.99"));
@@ -71,7 +77,7 @@ public class Activity_shop extends AppCompatActivity {
         plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_3), "Japan", "Succulent", "Organic", "$35.99"));
         plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_4), "Leighton", "Succulent", "Organic", "$35.99"));
         plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_5), "Brooklyn", "Succulent", "Organic", "$35.99"));
-
+*/
      /*   rvMainPlants.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
         PlantsRecyclerAdapter plantsRecyclerAdapter = new PlantsRecyclerAdapter(this, plantsModelArrayList);
 

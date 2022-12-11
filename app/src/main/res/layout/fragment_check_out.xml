@@ -170,6 +170,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_submit"
         android:text="@string/submit"
         app:cornerRadius="4dp"
         android:layout_width="150dp"
