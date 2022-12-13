@@ -1,5 +1,6 @@
 package com.plantsbasket.app.fragments;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,12 +23,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
 import com.plantsbasket.app.CartModel;
 import com.plantsbasket.app.PlantsModel;
-import com.plantsbasket.app.ProgressDialog;
 import com.plantsbasket.app.R;
 import com.plantsbasket.app.activities.DashboardActivity;
 import com.plantsbasket.app.adapter.CartRecyclerAdapter;
 import com.plantsbasket.app.fire_store_data.CartCollectionOperations;
-import com.plantsbasket.app.fire_store_data.Constants;
 import com.plantsbasket.app.fire_store_data.PlantCollectionOperations;
 
 import java.util.ArrayList;
@@ -71,6 +70,7 @@ public class CartFragment extends Fragment {
         cartCollectionOperations.getCartDataData(userId, new CartCollectionOperations.GetCartDataCollectionCallback() {
             @Override
             public void getCartDataSuccess(ArrayList<CartModel> cartList) {
+                progressDialog.dismiss();
                 totalPrice = 0;
                 Log.e(TAG, "plantData---cartList---=" + new Gson().toJson(cartList));
                 for (int i = 0; i < cartList.size(); i++) {
@@ -80,7 +80,7 @@ public class CartFragment extends Fragment {
                         @Override
                         public void getSpecificPlantDataSuccess(PlantsModel plantModel) {
                             Log.e(TAG,"plantsModel----"+new Gson().toJson(plantModel));
-                            progressDialog.dissmiss();
+                            progressDialog.dismiss();;
                             plantModel.setDocumentId(cartList.get(finalI).getDocumentId());
                             plantsModelArrayList.add(plantModel);
                             Log.e(TAG,"plantsModel----plantsModelArrayList--"+new Gson().toJson(plantsModelArrayList));
@@ -90,7 +90,7 @@ public class CartFragment extends Fragment {
 
                         @Override
                         public void getSpecificPlantDataFailure(String message) {
-                            progressDialog.dissmiss();
+                            progressDialog.dismiss();
                         }
                     });
                 }
@@ -99,7 +99,7 @@ public class CartFragment extends Fragment {
 
             @Override
             public void getCartDataFailure(String message) {
-                progressDialog.dissmiss();
+                progressDialog.dismiss();
             }
         });
         getActivity().setTitle("Cart");

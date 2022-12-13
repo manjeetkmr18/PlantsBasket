@@ -1,5 +1,8 @@
 package com.plantsbasket.app.fragments;
 
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.plantsbasket.app.ProgressDialog;
 import com.plantsbasket.app.R;
 import com.plantsbasket.app.SignUpModel;
 import com.plantsbasket.app.fire_store_data.UserCollectionOperations;
@@ -21,6 +23,11 @@ public class ProfileFragment extends Fragment {
     private EditText et_name, et_email, et_phone_number;
     private UserCollectionOperations userCollectionOperations;
     private ProgressDialog progressDialog;
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String Name = "nameKey";
+    public static final String Email = "emailKey";
+
+    SharedPreferences sharedpreferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,13 +51,15 @@ public class ProfileFragment extends Fragment {
             public void getUsersDataSuccess(SignUpModel signUpModel) {
                 et_name.setText(signUpModel.getFullName());
                 et_email.setText(signUpModel.getEmail());
-                progressDialog.dissmiss();
+
+
+                progressDialog.dismiss();
             }
 
             @Override
             public void getUsersDataFailure(String message) {
                 Toast.makeText(getActivity(), ""+message, Toast.LENGTH_SHORT).show();
-                progressDialog.dissmiss();
+                progressDialog.dismiss();
             }
         });
     }

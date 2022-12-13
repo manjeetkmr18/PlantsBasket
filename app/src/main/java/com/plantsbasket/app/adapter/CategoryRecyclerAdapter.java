@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.plantsbasket.app.R;
-import com.plantsbasket.app.activities.Activity_Checkout;
 import com.plantsbasket.app.activities.interfaces.ItemClickListener;
 import com.plantsbasket.app.fragments.Plant_Detail_Fragment;
 

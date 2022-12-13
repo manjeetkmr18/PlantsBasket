@@ -1,6 +1,5 @@
 package com.plantsbasket.app.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +17,9 @@ import androidx.fragment.app.FragmentTransaction;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
-import com.plantsbasket.app.activities.DashboardActivity;
+import com.plantsbasket.app.PlantsModel;
 import com.plantsbasket.app.fire_store_data.CartCollectionOperations;
 import com.plantsbasket.app.fire_store_data.Constants;
-import com.plantsbasket.app.PlantsModel;
 import com.plantsbasket.app.R;
 
 

@@ -1,5 +1,6 @@
 package com.plantsbasket.app.activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -27,7 +28,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.plantsbasket.app.ProgressDialog;
 import com.plantsbasket.app.R;
 import com.plantsbasket.app.SignUpModel;
 import com.plantsbasket.app.fire_store_data.UserCollectionOperations;
@@ -119,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, getString(R.string.failed), Toast.LENGTH_LONG).show();
                         }
 
-                        progressDialog.dissmiss();
+                        progressDialog.dismiss();
                     }
 
                 });
@@ -149,7 +149,7 @@ public class LoginActivity extends AppCompatActivity {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
-                progressDialog.dissmiss();
+                progressDialog.dismiss();
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
                 // ...
@@ -171,7 +171,7 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void checkIfUserPresentResult(boolean isPresent) {
                                     if(isPresent){
-                                        progressDialog.dissmiss();
+                                        progressDialog.dismiss();
                                         finishAffinity();
                                         startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
                                     }else{
@@ -179,14 +179,14 @@ public class LoginActivity extends AppCompatActivity {
                                        userCollectionOperations.saveOrEditUserData(signUpModel, new UserCollectionOperations.SaveUserCollectionCallback() {
                                            @Override
                                            public void saveUsersDataSuccess() {
-                                               progressDialog.dissmiss();
+                                               progressDialog.dismiss();
                                                finishAffinity();
                                                startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
                                            }
 
                                            @Override
                                            public void saveUsersDataFailure(String message) {
-                                               progressDialog.dissmiss();
+                                               progressDialog.dismiss();
                                                Toast.makeText(LoginActivity.this, ""+message, Toast.LENGTH_SHORT).show();
                                            }
                                        });
@@ -196,7 +196,7 @@ public class LoginActivity extends AppCompatActivity {
                             //if(user.i)
                             //updateUI(user);
                         } else {
-                            progressDialog.dissmiss();
+                            progressDialog.dismiss();
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Toast.makeText(LoginActivity.this, "Aut Fail", Toast.LENGTH_SHORT).show();

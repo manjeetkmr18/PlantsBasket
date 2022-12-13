@@ -17,10 +17,10 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.plantsbasket.app.fire_store_data.Constants;
-import com.plantsbasket.app.fire_store_data.PlantCollectionOperations;
 import com.plantsbasket.app.PlantsModel;
 import com.plantsbasket.app.ProgressDialog;
+import com.plantsbasket.app.fire_store_data.Constants;
+import com.plantsbasket.app.fire_store_data.PlantCollectionOperations;
 import com.plantsbasket.app.R;
 import com.plantsbasket.app.activities.interfaces.ItemClickListener;
 import com.plantsbasket.app.adapter.CategoryRecyclerAdapter;

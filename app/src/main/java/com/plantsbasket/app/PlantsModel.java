@@ -1,4 +1,4 @@
-package   com.plantsbasket.app;
+package com.plantsbasket.app;
 
 import android.graphics.drawable.Drawable;
 

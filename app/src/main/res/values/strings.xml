@@ -7,7 +7,7 @@
     <string name="credit_card_number">Credit Card Number</string>
     <string name="checkout">CheckOut</string>
     <string name="exp_date">Expiry Date</string>
-    <string name="security_code">Security Code</string>
+    <string name="security_code">CVV</string>
     <string name="submit">Submit</string>
     <string name="plant_explore">Plant Explore</string>
     <string name="organic">Organic</string>

@@ -3,7 +3,6 @@ package com.plantsbasket.app.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 import android.view.Window;
@@ -11,8 +10,6 @@ import android.view.WindowManager;
 
 import com.plantsbasket.app.activities.interfaces.ItemClickListener;
 import com.plantsbasket.app.adapter.CategoryRecyclerAdapter;
-import com.plantsbasket.app.PlantsModel;
-import com.plantsbasket.app.adapter.PlantsRecyclerAdapter;
 import com.plantsbasket.app.R;
 
 import java.util.ArrayList;
