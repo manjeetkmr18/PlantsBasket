@@ -49,7 +49,6 @@ public class PlantsRecyclerAdapter extends RecyclerView.Adapter<PlantsRecyclerAd
                 .centerCrop()
                 .placeholder(R.drawable.image_place_holder)
                 .into(holder.ivPlantsImg);
-        //holder.ivPlantsImg.setImageDrawable(plantsList.get(position).getPlantImage());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

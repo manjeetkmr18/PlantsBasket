@@ -53,31 +53,5 @@ public class Activity_shop extends AppCompatActivity {
 
     private void setPlantsAdapter() {
 
-       /* ArrayList<PlantsModel> plantsModelArrayList = new ArrayList<>();
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_1), "Brooklyn", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_2), "London", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_3), "Japan", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_4), "Leighton", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_5), "Brooklyn", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_1), "Brooklyn", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_2), "London", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_3), "Japan", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_4), "Leighton", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_5), "Brooklyn", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_1), "Brooklyn", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_2), "London", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_3), "Japan", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_4), "Leighton", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_5), "Brooklyn", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_1), "Brooklyn", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_2), "London", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_3), "Japan", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_4), "Leighton", "Succulent", "Organic", "$35.99"));
-        plantsModelArrayList.add(new PlantsModel(getResources().getDrawable(R.drawable.plant_image_5), "Brooklyn", "Succulent", "Organic", "$35.99"));
-*/
-     /*   rvMainPlants.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
-        PlantsRecyclerAdapter plantsRecyclerAdapter = new PlantsRecyclerAdapter(this, plantsModelArrayList);
-
-        rvMainPlants.setAdapter(plantsRecyclerAdapter);*/
     }
 }

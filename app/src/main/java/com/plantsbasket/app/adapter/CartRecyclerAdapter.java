@@ -60,20 +60,7 @@ public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapte
         holder.tv_count.setText(""+countStr);
         float fullPrice = priceFlt * countStr;
         holder.tvItemPlantPrice.setText("$"+fullPrice);
-        //holder.ivPlantsImg.setImageDrawable(plantsList.get(position).getPlantImage());
-        /*holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // get adapter position
-                int position=holder.getAdapterPosition();
-                // call listener
-                itemClickListener.onClick(position, String.valueOf(plantsList.get(position)));
-                // update position
-                SELECTED_POSITION=position;
-                // notify
-                // notifyDataSetChanged();
-            }
-        });*/
+
         holder.b_positive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

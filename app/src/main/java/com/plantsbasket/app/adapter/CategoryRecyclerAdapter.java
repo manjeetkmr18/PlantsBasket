@@ -18,9 +18,6 @@ import com.plantsbasket.app.fragments.Plant_Detail_Fragment;
 
 import java.util.ArrayList;
 
-/**
- * Created on 27/09/22
- */
 public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryRecyclerAdapter.ViewHolder> {
     private Activity context;
     private ArrayList<String> categoryList;
@@ -57,7 +54,6 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryRecycl
                 SELECTED_POSITION = position;
                 notifyDataSetChanged();
                 itemClickListener.onClick(position, "");
-               // context.startActivity(new Intent(context, Activity_Checkout.class));
             }
         });
     }
@@ -71,8 +67,6 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryRecycl
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvItemCategoryName;
-
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvItemCategoryName = itemView.findViewById(R.id.tvItemCategoryName);

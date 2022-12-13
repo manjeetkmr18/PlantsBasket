@@ -17,10 +17,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         if(FirebaseAuth.getInstance().getCurrentUser() !=null){
             finishAffinity();
             startActivity(new Intent(MainActivity.this, DashboardActivity.class));

@@ -45,15 +45,6 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private UserCollectionOperations userCollectionOperations;
 
-   /* @Override
-    protected void onStart() {
-
-        super.onStart();
-
-        mAuth.addAuthStateListener(mAuthListner);
-
-    }*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -193,14 +184,11 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                 }
                             });
-                            //if(user.i)
-                            //updateUI(user);
                         } else {
                             progressDialog.dismiss();
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Toast.makeText(LoginActivity.this, "Aut Fail", Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
                         }
 
                         // ...
